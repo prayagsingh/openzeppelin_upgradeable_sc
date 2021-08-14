@@ -11,7 +11,8 @@ async function main() {
     
     const WALLET_ADDRESS = deployer.address
     console.log("WALLET ADDRESS: ", WALLET_ADDRESS);
-    const CONTRACT_ADDRESS = '0xe8CE0a68D882405A1A7B6eAF9F7eDc8058c6BF12';
+    // change this address accordingly
+    const CONTRACT_ADDRESS = 'change_this';
     const box = Box.attach(CONTRACT_ADDRESS);
 
     // Setter 

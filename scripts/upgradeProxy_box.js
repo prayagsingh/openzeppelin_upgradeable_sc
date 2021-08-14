@@ -5,7 +5,7 @@ async function main () {
   
   // address generated when deployed deployProxy Box
   // the address of our proxy contract from when we deployed our Box contract  
-  const proxyAddress = '0xe8CE0a68D882405A1A7B6eAF9F7eDc8058c6BF12';
+  const proxyAddress = 'change_this';
 
   const BoxV2 = await ethers.getContractFactory('BoxV2');
   console.log('Upgrading Box...');
