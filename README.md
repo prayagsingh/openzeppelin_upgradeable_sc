@@ -78,7 +78,7 @@ Hardhat [docs](https://hardhat.org/tutorial/setting-up-the-environment.html)
 
 OpenZeppelin [docs v4.x](https://docs.openzeppelin.com/learn/upgrading-smart-contracts#upgrading-a-contract-via-plugins)
 
-
+***Youtube Video:*** [OpenZeppelin Upgrade contracts](https://www.youtube.com/watch?v=kWUDTZhxKZI)
 
 **Credits**
 
