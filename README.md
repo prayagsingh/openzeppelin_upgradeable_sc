@@ -21,8 +21,11 @@ Deploy upgradable smart contract using Openzeppelin on Polygon test network
 8. Install `npm i dotenv` package to use the environment variables from `.env` file
 
 9. Since we are using openzeppelin then we have to add some plugins.
+
     A. `npm install @openzeppelin/contracts`
+    
     B. `npm install --save-dev @openzeppelin/hardhat-upgrades`
+    
     C. `hardhat-config.js` is already configured to use the `hardhat-upgrade` plugin.
 
 **Compile Project**
@@ -37,10 +40,14 @@ Deploy upgradable smart contract using Openzeppelin on Polygon test network
 
 1. Deploying `deployProxy` [script](https://github.com/prayagsingh/openzeppelin_upgrdabale_sc/blob/main/scripts/deployProxy_box.js) using command `npx hardhat run --network polygon_test scripts/deployProxy_box.js`. please note down the address. we will use it in Step `2.C`.
 
-2. Now interact with `Box` contract by using `Hardhat-console`. Follow below steps
+2. Now interact with `Box` contract by using `Hardhat-console`. Please follow below steps.
+
     A. `npx hardhat console --network polygon_test`
+    
     B. `const Box = await ethers.getContractFactory('Box');`
+    
     C. `const box = await Box.attach('<the address of our proxy contract from when we deployed our Box contract>');`
+    
     D. `(await box.retrieve()).toString();` Result shoud be `42`. 
 
 3. Now it's time to deploy `BoxV2` smart-contract which contains additional functionality  when compared to `Box` smart-contract.
@@ -52,11 +59,17 @@ Deploy upgradable smart contract using Openzeppelin on Polygon test network
 6. Now we have successfully upgraded the smart-contract `Box` to `Boxv2` while ***keeping its state and the same address as before***.
 
 7. Verify the upgradation using below commands.
+
     A. `npx hardhat console --network polygon_test`
+    
     B. `const BoxV2 = await ethers.getContractFactory('BoxV2');`
+    
     C. `const box = await BoxV2.attach('< same address as in Step 2.C >');`
+    
     D. `(await box.retrieve()).toString();` Result shoud be `42`.
+    
     E. execute increment function using command `await box.increment();` 
+    
     F. `(await box.retrieve()).toString();` Result should be `43`.
 
 **References:** 
