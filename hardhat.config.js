@@ -35,8 +35,8 @@ module.exports = {
     //   accounts: [privateKey1, privateKey2, ...]
     // }
     polygon_test: {
-      url: `https://rpc-mumbai.maticvigil.com/v1/${POLYGON_TEST_API_KEY}`,
-      //url: "https://matic-mumbai.chainstacklabs.com/",
+      //url: `https://rpc-mumbai.maticvigil.com/v1/${POLYGON_TEST_API_KEY}`,
+      url: "https://matic-mumbai.chainstacklabs.com/",
       chainId: 80001,
       // The address to use as default sender. If not present the first account of the node is used
       //from: ,

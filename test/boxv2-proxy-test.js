@@ -31,7 +31,7 @@ describe('BoxV2 (upgrade-proxy)', function () {
 
   // Test case
   it('returns 35 as a result when successful', async function () {
-    
+    await boxV2.initializeV2();
     const result = await boxV2.B(1);
     console.log("result in B() is: ", result.toString());
     // Test if the returned value is the same one

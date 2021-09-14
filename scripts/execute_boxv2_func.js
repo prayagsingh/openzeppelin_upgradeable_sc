@@ -7,21 +7,22 @@ async function main() {
 
     console.log("Deploying contracts with the account:", deployer.address);
     
-    const Box = await hre.ethers.getContractFactory("Box");
+    const BoxV2 = await hre.ethers.getContractFactory("BoxV2");
     
     const WALLET_ADDRESS = deployer.address
     console.log("WALLET ADDRESS: ", WALLET_ADDRESS);
     // change this address accordingly
-    const CONTRACT_ADDRESS = 'change_this';
-    const box = Box.attach(CONTRACT_ADDRESS);
+    const CONTRACT_ADDRESS = '0x2279B7A0a67DB372996a5FaB50D91eAA73d2eBe6';
+    const boxv2 = await BoxV2.attach(CONTRACT_ADDRESS);
 
     // Setter 
     //const result = await box.store(22);
     //console.log("Executed Store method and result is:", result.data.toString());
 
     // Getter
-    const value = await box.retrieve();
-    console.log('Box value is', value.toString());
+    await boxv2.initializeV2();
+    const value = await boxv2.B(1);
+    console.log('BoxV2.B() value is', value.toString());
 
 }
 main().then(() => process.exit(0)).catch(error => {
