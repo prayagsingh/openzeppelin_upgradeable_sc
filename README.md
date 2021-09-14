@@ -37,6 +37,7 @@ Deploy upgradable smart contract using Openzeppelin on Polygon test network
 `npx hardhat test`
 
 **Deploy Project**
+***WARNING:*** This section requires some changes after the recent changes in the code.
 
 1. Deploying `deployProxy` [script](https://github.com/prayagsingh/openzeppelin_upgrdabale_sc/blob/main/scripts/deployProxy_box.js) using command `npx hardhat run --network polygon_test scripts/deployProxy_box.js`. please note down the address. we will use it in Step `2.C`.
 
