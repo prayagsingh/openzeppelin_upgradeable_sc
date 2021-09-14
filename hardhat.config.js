@@ -26,7 +26,7 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
 module.exports = {
   // You can customize which network is used by default when running Hardhat by setting
   // the config's defaultNetwork field. If you omit this config, its default value is "hardhat"
-  defaultNetwork: "polygon_test",
+  defaultNetwork: "hardhat",
   networks: {
     hardhat: {
     },
@@ -42,9 +42,10 @@ module.exports = {
       //from: ,
       // Its value should be "auto" or a number. If a number is used, it will be the gas limit used by default in every transaction.
       // If "auto" is used, the gas limit will be automatically estimated. Default value: "auto"
-      gas: "auto",
+      //gas: "auto",
       // Its value should be "auto" or a number. This parameter behaves like gas. Default value: "auto"
-      gasPrice: "auto",
+      //gasPrice: "auto",
+      //gasPrice: 8000000000, // default is 'auto' which breaks chains without the london hardfork
       // A number used to multiply the results of gas estimation to give it some slack due to the uncertainty 
       // of the estimation process. Default value: 1
       //gasMultiplier: 1,
@@ -54,7 +55,7 @@ module.exports = {
       // You can use this field to set extra HTTP Headers to be used when making JSON-RPC requests. It accepts a JavaScript
       // object which maps header names to their values. Default value: undefined
       //httpHeaders: '',
-      //timeout: 20000
+      timeout: 60000,
     }
   },
   solidity: {
