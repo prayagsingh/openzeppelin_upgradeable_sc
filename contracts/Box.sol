@@ -45,7 +45,8 @@ contract BoxV2 is Box {
     bool v2Initialized;
 
     // @note not possible to override the initialize function since it executes only once and not virtual in nature
-    // @note In upgradable smart contract we can't change anything in the Box contract. we can only add new functions and variables
+    // @note In upgradable smart contract we can't change anything in the Box contract. 
+    //       we can only add new functions and variables
     // @note https://forum.openzeppelin.com/t/understanding-upgradeable-smart-contract/15485
 
     function initializeV2() public returns (bool) {

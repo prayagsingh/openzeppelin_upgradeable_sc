@@ -1,6 +1,9 @@
 require("@nomiclabs/hardhat-waffle");
 require('@nomiclabs/hardhat-ethers');
 require('@openzeppelin/hardhat-upgrades');
+require("hardhat-gas-reporter");
+require("solidity-coverage");
+require("@nomiclabs/hardhat-solhint");
 
 // for using .env file which contains private info. 
 require('dotenv').config();
@@ -29,6 +32,7 @@ module.exports = {
   defaultNetwork: "hardhat",
   networks: {
     hardhat: {
+      initialBaseFeePerGas: 0, // workaround from https://github.com/sc-forks/solidity-coverage/issues/652#issuecomment-896330136 . Remove when that issue is closed.
     },
     // rinkeby: {
     //   url: "https://eth-mainnet.alchemyapi.io/v2/123abc123abc123abc123abc123abcde",
@@ -58,6 +62,12 @@ module.exports = {
       timeout: 60000,
     }
   },
+  
+  gasReporter: {
+    enabled: process.env.REPORT_GAS !== undefined,
+    currency: "USD",
+  },
+
   solidity: {
     version: "0.8.4",
     settings: {
@@ -67,6 +77,7 @@ module.exports = {
       }
     }
   },
+
   paths: {
     sources: "./contracts",
     tests: "./test",
