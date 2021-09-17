@@ -1,12 +1,12 @@
-# Openzeppelin upgradable smart-contract example
+# Openzeppelin upgradeable smart-contract example
 
-Deploy upgradable smart contract using Openzeppelin on local test network OR polygon test network. This example uses `Transparent Proxy` approach for deploying upgradeable smart contract.
+Deploy upgradeable smart contract using Openzeppelin on local test network OR polygon test network. This example uses `Transparent Proxy` approach for deploying upgradeable smart contract.
 
 **Commands to create a new project using Hardhat**
 
-1. `mkdir openzeppelin_upgradable_sc`
+1. `mkdir openzeppelin_upgradeable_sc`
 
-2. `cd openzeppelin_upgradable_sc`
+2. `cd openzeppelin_upgradeable_sc`
 
 3. `npm init --yes`
 
